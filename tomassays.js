@@ -28,5 +28,5 @@ http.createServer(function (req, res) {
             res.end(content);
         }
     });
-}).listen(80);
+}).listen(1337);
 console.log("Server running at http://localhost:8080/");

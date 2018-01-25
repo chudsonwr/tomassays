@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "hostingPlanName": {
+            "value": "tomassays-csre-webappsp-dev-wr"
+        },
+        "hostingEnvironment": {
+            "value": ""
+        },
+        "location": {
+            "value": "West Europe"
+        },
+        "sku": {
+            "value": "Standard"
+        },
+        "workerSize": {
+            "value": "1"
+        },
+        "skuCode": {
+            "value": "S1"
+        },
+        "tags": {
+            "value": {
+                "OwnerContact": "csre-team@worldremit.com",
+                "Team": "CSRE",
+                "Project": "CSRE-1223",
+                "RunModel": "247",
+                "hidden-related:/subscriptions/9c255757-a7c8-4c88-8476-0d7bf926dd6a/resourcegroups/tomassays-csre-rg-dev-wr/providers/Microsoft.Web/serverfarms/helloworld-csre-webappsp-dev-wr": "empty"
+            }
+        }
+    }
+}

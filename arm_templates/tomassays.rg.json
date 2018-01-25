@@ -1,0 +1,12 @@
+{
+  "name": "tomassays-csre",
+  "access_group_id": "89154a85-797b-4564-b639-396f5f3e4dd1",
+  "universal": true,
+  "tags": {
+    "OwnerContact": "csre@worldremit.com",
+    "Team": "CSRE",
+    "Location": "WestEurope",
+    "Project": "CSRE-1223 - ARM Environments",
+    "RunModel": "247"
+  }
+}

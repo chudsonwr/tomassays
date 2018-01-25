@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "value": "tomassays-csre-webapp-dev-wr"
+        },
+        "hostingPlanName": {
+            "value": "tomassays-csre-webappsp-dev-wr"
+        },
+        "hostingEnvironment": {
+            "value": ""
+        },
+        "location": {
+            "value": "West Europe"
+        },
+        "serverFarmResourceGroup": {
+            "value": "tomassayssp-csre-rg-nonprd-wr"
+        },
+        "subscriptionId": {
+            "value": "9c255757-a7c8-4c88-8476-0d7bf926dd6a"
+        },
+        "tags": {
+            "value": {
+                "OwnerContact": "csre-team@worldremit.com",
+                "Team": "CSRE",
+                "Project": "CSRE-1223",
+                "RunModel": "247",
+                "hidden-related:/subscriptions/9c255757-a7c8-4c88-8476-0d7bf926dd6a/resourcegroups/tomassayssp-csre-rg-nonprd-wr/providers/Microsoft.Web/serverfarms/tomassays-csre-webappsp-dev-wr": "empty"
+            }
+        }
+    }
+}

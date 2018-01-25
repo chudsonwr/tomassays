@@ -1,0 +1,79 @@
+{
+    "parameters": {
+        "name": {
+            "type": "string"
+        },
+        "hostingPlanName": {
+            "type": "string"
+        },
+        "hostingEnvironment": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string"
+        },
+        "serverFarmResourceGroup": {
+            "type": "string"
+        },
+        "subscriptionId": {
+            "type": "string"
+        },
+        "tags": {
+            "type": "Object"
+        }
+    },
+    "variables": {
+        "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]"
+    },
+    "resources": [
+        {
+            "apiVersion": "2016-03-01",
+            "name": "[parameters('name')]",
+            "type": "Microsoft.Web/sites",
+            "tags": "[parameters('tags')]",
+            "properties": {
+                "name": "[parameters('name')]",
+                "serverFarmId": "[variables('serverFarmId')]",
+                "hostingEnvironment": "[parameters('hostingEnvironment')]"
+            },
+            "resources": [
+                {
+                    "type": "config",
+                    "name": "web",
+                    "apiVersion": "2016-03-01",
+                    "properties": {
+                        "phpVersion": "5.6",
+                        "netFrameworkVersion": "v4.7",
+                        "webSocketsEnabled": false,
+                        "requestTracingEnabled": false,
+                        "httpLoggingEnabled": false,
+                        "logsDirectorySizeLimit": 40,
+                        "detailedErrorLoggingEnabled": true,
+                        "scmType": "LocalGit",
+                        "WEBSITE_NODE_DEFAULT_VERSION": "6.9.1"
+
+                    },
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/Sites', parameters('name'))]"
+                    ]
+                },
+                {
+                    "name": "appsettings",
+                    "type": "config",
+                    "apiVersion": "2015-08-01",
+                    "dependsOn": [
+                        "[concat('Microsoft.Web/sites/', parameters('name'))]"
+                    ],
+                    "properties": {
+                        "WEBSITE_NODE_DEFAULT_VERSION": "6.9.1"
+                    }
+                }
+            ],
+            "location": "[parameters('location')]",
+            "dependsOn": [
+            ]
+        }
+    ],
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0"
+}
