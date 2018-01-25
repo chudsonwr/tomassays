@@ -1,0 +1,47 @@
+{
+  "environments": {
+    "global": {
+      "arm_template": "./tomassays/arm_templates/service_plan.template.json"
+    },
+    "core": {
+      "resource_group_name": "",
+      "subscription_name": "",
+      "parameters": {}
+    },
+    "dev": {},
+    "nonprd": {
+      "resource_group_name": "tomassayssp-csre-rg-nonprd-wr",
+      "subscription_name": "Non-Production"
+    },
+    "prd": {}
+  },
+  "parameters": {
+    "hostingPlanName": {
+      "value": "tomassays-csre-webappsp-nonprd-wr"
+    },
+    "hostingEnvironment": {
+      "value": ""
+    },
+    "location": {
+      "value": "West Europe"
+    },
+    "sku": {
+      "value": "Standard"
+    },
+    "workerSize": {
+      "value": "1"
+    },
+    "skuCode": {
+      "value": "S1"
+    },
+    "tags": {
+      "value": {
+        "OwnerContact": "csre-team@worldremit.com",
+        "Team": "CSRE",
+        "Project": "CSRE-1223",
+        "RunModel": "247",
+        "hidden-related:/subscriptions/9c255757-a7c8-4c88-8476-0d7bf926dd6a/resourcegroups/tomassays-csre-rg-nonprd-wr/providers/Microsoft.Web/serverfarms/helloworld-csre-webappsp-nonprd-wr": "empty"
+      }
+    }
+  }
+}
