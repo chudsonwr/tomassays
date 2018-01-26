@@ -43,7 +43,7 @@ http.createServer(function (req, res) {
      res_object = {}
             arr = []
             imageattach = {}
-            imageattach["image_url"] = "https://jenkins.csre.worldremit.com:1337/?token=igA5lsULEC6eVhhoiyW7KaQ4&image=" + items[Math.floor(Math.random()*items.length)]
+            imageattach["image_url"] = "https://jenkins.csre.worldremit.com:1337/?token=" + process.env.TOMASSAYS_TOKEN + "&image=" + items[Math.floor(Math.random()*items.length)]
             arr.push(imageattach)
             res_object['attachments'] = arr
             res_object['text'] = "Tomas Says....."
