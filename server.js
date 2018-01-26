@@ -11,7 +11,10 @@ http.createServer(function (req, res) {
     var query = url.parse(req.url,true).query;
     if (query.token != process.env.TOMASSAYS_TOKEN) {
         res.writeHead(403, {'Content-type':'text/html'})
+        console.log('token supplied:')
         console.log(query.token)
+        console.log('Token in env var')
+        console.log(process.env.TOMASSAYS_TOKEN)
         res.end("wrong token");
     } else {
     
