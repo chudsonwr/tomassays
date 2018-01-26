@@ -8,6 +8,8 @@ var http = require('http'),
 //create http server listening on port 3333
 http.createServer(function (req, res) {
     //use the url to parse the requested url and get the image name
+
+
     var query = url.parse(req.url,true).query;
     if (query.token != process.env.TOMASSAYS_TOKEN) {
         res.writeHead(403, {'Content-type':'text/html'})
@@ -17,7 +19,26 @@ http.createServer(function (req, res) {
         console.log(process.env.TOMASSAYS_TOKEN)
         res.end("wrong token");
     } else {
-    
+        console.dir(req.param);
+
+        // if (req.method == 'POST') {
+        //     console.log('POST');
+        //     var body = '';
+        //     req.on('data', function (data) {
+        //         body += data;
+        //     });
+        //     req.on('end', function () {
+        //         console.log("Body: " + body);
+        //     });
+        // };
+        var body = '';
+        req.on('data', function (data) {
+            body += data;
+        });
+        req.on('end', function () {
+            console.log("Body: " + body);
+        });
+
         pic = query.image;
 
          global.items = []
