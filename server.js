@@ -9,7 +9,7 @@ var http = require('http'),
 http.createServer(function (req, res) {
     //use the url to parse the requested url and get the image name
     var query = url.parse(req.url,true).query;
-    if (query.token != "igA5lsULEC6eVhhoiyW7KaQ4") {
+    if (query.token != process.env.TOMASSAYS_TOKEN) {
         res.writeHead(403, {'Content-type':'text/html'})
         console.log(query.token)
         res.end("wrong token");
